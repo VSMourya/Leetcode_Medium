@@ -47,8 +47,11 @@ def getArray(inp):
 
     return "result = " + str(result)
 
-inp = [4, 2, 3, 7]
-print(getArray(inp))
+
+if __name__ == '__main__':
+
+    inp = [4, 2, 3, 7]
+    print(getArray(inp))
 
 
 
