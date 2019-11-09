@@ -47,6 +47,15 @@ def getArray(inp):
 
     return "result = " + str(result)
 
+# OR 
+
+
+# def getArray(inp):
+#     hsh = {a:b for a, b in enumerate(sorted(inp), 1)}
+#     return [hsh[a] for a in inp]
+
+
+
 
 if __name__ == '__main__':
 
