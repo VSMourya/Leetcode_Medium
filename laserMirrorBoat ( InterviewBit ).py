@@ -66,8 +66,6 @@ matrix = [[1,0,1],
           [1,0,0],
           [0,0,0]]
 
-#matrix is an nxn matrix
-
 print(getCount(matrix))
 
 
