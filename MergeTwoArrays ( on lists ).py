@@ -1,6 +1,8 @@
 
 # merge two sorted arrays in O(m+n) time
 
+# time - O(m+n)
+# space - O(m+n)
 
 def merge(a,b):
 
