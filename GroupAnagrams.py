@@ -35,6 +35,29 @@ def groupAnagrams(strs):
             output.append(ls)
     return output
 
+
+# OR
+# def groupAnagrams(words):
+#     ls = []
+#     hsh = {}
+    
+#     sortedWords = list(set(["".join(sorted(i)) for i in words]))
+
+#     for word in sortedWords:
+#         for i in words:
+#             sortedWord = "".join(sorted(i))
+#             if sortedWord == word:
+#                 if sortedWord in hsh:
+#                     hsh[word].append(i)
+#                 else:
+#                     hsh[word] = [i]
+
+
+#     for key,values in hsh.items():
+#         ls.append(values)
+
+#     return ls
+
 ls = ["eat", "tea", "tan", "ate", "nat", "bat"]
 print(groupAnagrams(ls))
 
