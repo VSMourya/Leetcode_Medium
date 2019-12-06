@@ -17,10 +17,10 @@ def minRoomsRequired(arr):
     for i in range(1 ,len(arr)):
 
         meetTimings = arr[i]
-        prevMeetTimings = arr[ i -1]
+        prevMeetTimings = arr[i-1]
 
         if meetTimings[0] < prevMeetTimings[1]:
-            minRooms + =1
+            minRooms +=1
 
     return minRooms
 
