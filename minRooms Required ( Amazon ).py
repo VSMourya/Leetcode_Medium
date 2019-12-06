@@ -9,6 +9,8 @@
 
 def minRoomsRequired(arr):
 
+#     if the array is not already sorted
+#     arr.sort(key=lambda x:x[0])
 
     minRooms = 0
 
