@@ -1,5 +1,5 @@
 
-# a lucky number is a number those sum of its individual digits of the num should be equal to one
+# a lucky number is a number those sum of its individual digits should be equal to one
 # Question : Find if a num is a lucky number
 
 
