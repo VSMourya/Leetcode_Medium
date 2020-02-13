@@ -47,6 +47,5 @@ def plusOne(head):
     while notNine:
         notNine.val = 0
         notNine = notNine.next
-
-
+        
     return sentinal if sentinal.val else sentinal.next
