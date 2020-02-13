@@ -26,3 +26,27 @@ def plusOne(head):
 
     return start
 
+# ------------------------------------------------------------------------------------
+
+Method 2 
+
+
+def plusOne(head):
+    sentinal = ListNode(0)
+    sentinal.next = head 
+    notNine = sentinal 
+
+    while head:
+        if head.val != 9:
+            notNine = head
+        head = head.next
+
+    notNine.val +=1
+    notNine = notNine.next
+
+    while notNine:
+        notNine.val = 0
+        notNine = notNine.next
+
+
+    return sentinal if sentinal.val else sentinal.next
