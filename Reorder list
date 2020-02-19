@@ -1,0 +1,21 @@
+ def reorderList(self, head: ListNode) -> None:
+      
+      
+        if not head:
+            return head
+       
+        def getList(head):
+            ls = []
+            while head:
+                ls.append(head)
+                head = head.next
+            return ls
+        
+        ls = getList(head)
+        
+        for i in range(1,len(ls)//2+1):
+            ls[i-1].next = ls[len(ls)-i]
+            ls[len(ls)-i].next = ls[i]
+            ls[len(ls)//2].next = None
+        
+  
