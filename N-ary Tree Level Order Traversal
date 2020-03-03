@@ -1,0 +1,19 @@
+ def levelOrder(self, root: 'Node') -> List[List[int]]:
+        
+        if not root:
+            return []
+        
+        
+        hsh = collections.defaultdict(list)
+        
+        q = [[root,0]]
+        
+        while q:
+            node,level = q.pop(0)
+            hsh[level] += [node.val]
+            
+            for child in node.children:
+                q.append([child,level+1])
+                
+        
+        return hsh.values()
