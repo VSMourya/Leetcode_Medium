@@ -1,0 +1,27 @@
+
+
+def shortestDistance(ls,w1,w2):
+
+    stack = [[ls[0],0]]
+    names = {w1,w2}
+
+    minDiff = float("inf")
+
+    for i,name in enumerate(ls):
+        if name in names:
+            if stack[-1][0] == name:
+                stack.pop()
+                stack.append([name,i])
+            else:
+                ele,idx = stack.pop()
+                stack.append([name,i])
+                if minDiff > abs(idx-i):
+                    minDiff = abs(idx-i)
+
+    return minDiff
+
+ls = ["karthik","mourya","shreyak","nikhil","mourya","shubham","karthik","shreyak","prasanth","nikhil"]
+
+w1= "prasanth"
+w2 = "shubham"
+print(shortestDistance(ls,w1,w2))
