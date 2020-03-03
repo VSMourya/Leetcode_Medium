@@ -1,0 +1,27 @@
+  def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        
+        s = [root]
+        
+        parent = {root:None}
+        
+        while q not in parent or p not in parent:
+            
+            node = s.pop()
+            
+            if node.left:
+                parent[node.left] = node
+                s.append(node.left)
+            if node.right:
+                parent[node.right] = node
+                s.append(node.right)
+            
+        ancestors = set()
+        
+        while p:
+            ancestors.add(p)
+            p = parent[p]
+            
+        while q not in ancestors:
+            q = parent[q]
+        
+        return q
