@@ -1,0 +1,53 @@
+ def bstToGst(self, root: TreeNode) -> TreeNode:
+        
+        
+        t1 = root
+        
+        hsh = {}
+        
+        ls = []
+        
+        def inOrder(root):
+            if root:
+                inOrder(root.left)
+                ls.append(root.val)
+                inOrder(root.right)
+            else:
+                return 
+        inOrder(root)
+        
+        res = [0 for i in ls]
+        
+        temp = ls[-1]
+        for i in range(len(ls)-2,-1,-1):
+            temp = ls[i] + temp
+            res[i] = temp
+        
+        res[-1] = ls[-1]
+        
+        for i in range(len(ls)):
+            hsh[ls[i]] = res[i]
+        
+                
+        def traversal(root,hsh):
+            if root:
+                root.val = hsh[root.val]
+                
+                traversal(root.left,hsh)
+                traversal(root.right,hsh)
+            else:
+                return 
+        
+        traversal(root,hsh)
+        
+        return t1
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
