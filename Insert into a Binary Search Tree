@@ -1,0 +1,19 @@
+class Solution:
+    def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
+        
+        node = root
+        while True:
+            if val < node.val:
+                if not node.left:
+                    node.left = TreeNode(val)
+                    break
+                else:
+                    node = node.left
+            else:
+                if not node.right:
+                    node.right = TreeNode(val)
+                    break
+                else:
+                    node = node.right
+        return root
+        
