@@ -1,0 +1,11 @@
+    def numOfSubarrays(self, arr: List[int], k: int, threshold: int) -> int:
+        
+        prefixSum = [0]
+        
+        for i in arr:
+            prefixSum.append(i + prefixSum[-1])
+        
+        ls = [prefixSum[i + k] - prefixSum[i] >= k * threshold for i in range(len(arr) - k + 1)]
+        
+        return sum(ls)
+        
