@@ -1,0 +1,9 @@
+class Solution:
+    def getAllElements(self, root1: TreeNode, root2: TreeNode) -> List[int]:
+        
+        def inorder(root):
+            return inorder(root.left) + [root.val] + inorder(root.right) if root else []
+        
+        return sorted(inorder(root1) + inorder(root2))
+        
+        
