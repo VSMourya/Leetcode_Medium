@@ -1,0 +1,44 @@
+class UnionFind:
+    
+    def __init__(self,n):
+        self.parent = [-1 for _ in range(n)]
+    
+    def find(self,i):
+        if self.parent[i] == -1:
+            return i
+        return self.find(self.parent[i])
+    
+    def union(self,v1,v2):
+
+        rootA = self.find(v1)
+        rootB = self.find(v2)
+
+        if rootA == rootB:
+            return False
+        
+        self.parent[rootA] = rootB
+        return True
+        
+        
+class Solution:
+    def validTree(self, n: int, edges: List[List[int]]) -> bool:
+        
+        if len(edges) != n-1:
+            return False
+        
+        unionFind = UnionFind(n)
+        
+        for v1,v2 in edges:
+            if not unionFind.union(v1,v2):
+                return False
+        return True
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
