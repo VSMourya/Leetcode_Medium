@@ -1,0 +1,24 @@
+    def connect(self, root: 'Node') -> 'Node':
+        
+        if not root:
+            return 
+        
+        head = root
+        q = [root]
+        
+        res = []
+        while q:
+            ls = []
+            for i in range(len(q)):
+                node = q.pop(0)
+                ls.append(node)
+                
+                if node.left: q.append(node.left)
+                if node.right: q.append(node.right)
+                    
+            for i in range(len(ls)-1):
+                ls[i].next = ls[i+1]
+            
+            ls[-1].next = None
+        
+        return root
