@@ -1,0 +1,28 @@
+
+class Solution:
+    def printLinkedListInReverse(self, head: 'ImmutableListNode') -> None:
+        
+        
+        #RECURSIVE
+        #time - O(n)
+        #space - O(n)
+        
+        if not head:
+            return 
+        
+        self.printLinkedListInReverse(head.getNext())
+        head.printValue()
+        
+        
+        #ITERATIVE
+        #time - O(n)
+        #space - O(n)
+        
+        stack = []
+        
+        while head:
+            stack.append(head)
+            head = head.getNext()
+        
+        while stack:
+            stack.pop().printValue()
