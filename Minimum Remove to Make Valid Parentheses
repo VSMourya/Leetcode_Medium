@@ -1,0 +1,26 @@
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
+        
+        brackets = list("()")
+        stack = []
+        
+        for idx,char in enumerate(s):
+            if char in brackets:
+                if char == ")":
+                    if stack:
+                        if stack[-1][0] == "(":
+                            stack.pop()
+                        else:
+                            stack.append([")",idx])
+                    else:
+                        stack.append([")",idx])
+                else:
+                    stack.append(["(",idx])
+        
+        set1 = set(i[1] for i in stack)
+        result = ""
+        
+        for i in range(len(s)):
+            if i not in set1:
+                result += s[i]
+        return result
